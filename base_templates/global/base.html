@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'washBudget/partials/head.html' %}
+    <title>{% block title %}{% endblock title %} NG Clean - Limpeza de Sofás e Estofados</title>
+</head>
+
+<body>
+    {% include 'washBudget/partials/header.html' %}
+    <main class="main-content-container">
+        <div class="main-content-container title">
+            <p>Selecione o item que deseja limpar:</p>
+        </div>
+        {% block content %}{% endblock content %}
+    </main>
+    
+    {% include 'washBudget/partials/footer.html' %}  
+</body>
+
+</html>

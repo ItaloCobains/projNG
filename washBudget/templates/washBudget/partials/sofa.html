@@ -1,0 +1,107 @@
+<div class="budget budget-list-item">
+    <footer class="budget-footer">
+        <button type="button" class="btn btn-light btn-lg custom-btn" data-toggle="modal" data-target="#myModal">
+
+            <div class="budget-cover">
+                <img src="   https://cdn-icons-png.flaticon.com/512/1698/1698771.png ">
+            </div>
+            <div class="budget-title-container">
+                <h2 class="budget-title">Sofá</h2>
+            </div>
+        </button>
+    </footer>
+</div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h1 class="form-title">Faça seu orçamento</h1>
+                </div>
+                <div class="modal-body">
+                    {% comment %} <form method="post" action="{% url 'link:orcamento' %}">
+                        {% csrf_token %} {% endcomment %}
+                        <div class="form-group">
+                            <label for="num-pessoas" class="form-label">Número de pessoas sentadas</label>
+                            <div class="form-image-text">
+                                <img src="https://cdn-icons-png.flaticon.com/512/859/859978.png" class="form-image">
+                                <p>Quantas pessoas cabem sentadas no seu sofá?<br>
+                                Cada pessoa adulta sentada equivale a aproximadamente 60 cm.</p>
+                            </div>
+                            <br>
+                            <div class="number-list">
+                                <ul>
+                                    <li><button type='submit' name="num-pessoas" value='2' class='btn btn-primary' role="button" >2</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='3' class='btn btn-primary' role="button" >3</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='4' class='btn btn-primary' role="button" >4</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='5' class='btn btn-primary' role="button" >5</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='6' class='btn btn-primary' role="button" >6</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='7' class='btn btn-primary' role="button" >7</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='8' class='btn btn-primary' role="button" >8</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='9' class='btn btn-primary' role="button" >9</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='10' class='btn btn-primary' role="button" >10</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='11' class='btn btn-primary' role="button" >11</button></li>
+                                    <li><button type='submit' name="num-pessoas" value='12' class='btn btn-primary' role="button" >12</button></li>
+                                </ul>
+                            </div>
+                            <select id="num-pessoas" name="num-pessoas" class="form-select hidden">
+                                <option value="">Selecione</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="modelo" class="form-label">Modelo</label>
+                            <div class="radio-buttons">
+                                <input type="radio" name="modelo" value="retratil" id="togglemodel0" class="button-radio">
+                                <label class="item-type" for="togglemodel0">Sofá Retrátil</label>
+                                <input type="radio" name="modelo" value="comum" id="togglemodel1" class="button-radio">
+                                <label class="item-type" for="togglemodel1">Sofá Comum</label>
+                                <input type="radio" name="modelo" value="canto" id="togglemodel2" class="button-radio">
+                                <label class="item-type" for="togglemodel2">Sofá de Canto</label>
+                                <input type="radio" name="modelo" value="chaise" id="togglemodel3" class="button-radio">
+                                <label class="item-type" for="togglemodel3">Sofá com Chaise</label>
+                                <input type="radio" name="modelo" value="cama" id="togglemodel4" class="button-radio">
+                                <label class="item-type" for="togglemodel4">Sofá-Cama</label>
+                                <input type="radio" name="modelo" value="cantoalemao" id="togglemodel4" class="button-radio">
+                                <label class="item-type" for="togglemodel4">Canto Alemão</label>
+                                <input type="radio" name="modelo" value="namoradeira" id="togglemodel4" class="button-radio">
+                                <label class="item-type" for="togglemodel4">Namoradeira</label>
+                                <input type="radio" name="modelo" value="diva" id="togglemodel4" class="button-radio">
+                                <label class="item-type" for="togglemodel4">Divã</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="material" class="form-label">Material</label>
+                            <div class="radio-buttons">
+                                <input type="radio" name="material" value="tecido" id="togglematerial0" class="button-radio">
+                                <label class="item-type" for="togglematerial0">Tecido</label>
+                            </div>
+                        </div>
+                            
+                        <div class="form-group">
+                            <label for="servicos" class="form-label">Serviços</label>
+                            <div class="radio-buttons">
+                                <input type="radio" name="servicos" value="limpeza" id="toggleservicos0" class="button-radio">
+                                <label class="item-type" for="toggleservicos0">Limpeza</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+        </div>
+    </div>
