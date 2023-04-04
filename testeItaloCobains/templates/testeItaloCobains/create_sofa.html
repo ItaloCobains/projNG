@@ -1,0 +1,22 @@
+{% extends "global/base.html" %}
+
+
+{% block content %}
+  <h2>Criar Sofá</h2>
+  <form method="post" class="needs-validation" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="mb-3">
+      <label for="{{ field.auto_id }}" class="form-label">{{ field.label }}</label>
+      {{ field|add_class:'form-control' }}
+      {% if field.errors %}
+        <div class="invalid-feedback">
+          {{ field.errors.0 }}
+        </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Criar</button>
+  </form>
+{% endblock %}
+

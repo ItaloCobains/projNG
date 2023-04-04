@@ -1,0 +1,17 @@
+{% extends "global/base.html" %}
+
+
+
+{% block content %}
+  <h2>Lista de Sofás</h2>
+  <a href="{% url 'teste:create_sofa' %}">Criar novo sofá</a>
+  <ul>
+    {% for sofa in sofas %}
+      <li>
+        {{ sofa.modelo }}
+        <a href="{% url 'teste:edit_produto' sofa.id %}">Editar</a>
+        <a href="{% url 'teste:delete_sofa' sofa.id %}" onclick="return confirm('Tem certeza que deseja excluir este sofá?');">Excluir</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

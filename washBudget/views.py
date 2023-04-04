@@ -1,6 +1,7 @@
 from django.shortcuts import render
-
 from .forms import SofaForm
+
+
 
 def home(request):
     return render(request, 'washBudget/pages/home.html', context={    
