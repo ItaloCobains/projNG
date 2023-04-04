@@ -6,5 +6,5 @@ app_name = "link"
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('enviar-orcamento/', views.enviarFormSofa, name='orcamento'),
+    path('orcamento_sofa/', views.orcamento_sofa, name='orcamento_sofa'),
 ]

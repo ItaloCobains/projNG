@@ -19,8 +19,9 @@
                     <h1 class="form-title">Faça seu orçamento</h1>
                 </div>
                 <div class="modal-body">
-                    {% comment %} <form method="post" action="{% url 'link:orcamento' %}">
-                        {% csrf_token %} {% endcomment %}
+                    <form method="POST" action="{% url 'link:orcamento_sofa' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
                         <div class="form-group">
                             <label for="num-pessoas" class="form-label">Número de pessoas sentadas</label>
                             <div class="form-image-text">
@@ -31,17 +32,17 @@
                             <br>
                             <div class="number-list">
                                 <ul>
-                                    <li><button type='submit' name="num-pessoas" value='2' class='btn btn-primary' role="button" >2</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='3' class='btn btn-primary' role="button" >3</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='4' class='btn btn-primary' role="button" >4</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='5' class='btn btn-primary' role="button" >5</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='6' class='btn btn-primary' role="button" >6</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='7' class='btn btn-primary' role="button" >7</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='8' class='btn btn-primary' role="button" >8</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='9' class='btn btn-primary' role="button" >9</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='10' class='btn btn-primary' role="button" >10</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='11' class='btn btn-primary' role="button" >11</button></li>
-                                    <li><button type='submit' name="num-pessoas" value='12' class='btn btn-primary' role="button" >12</button></li>
+                                    <li><button type="button" name="num-pessoas" value="2">2</button></li>
+                                    <li><button type="button" name="num-pessoas" value="3">3</button></li>
+                                    <li><button type="button" name="num-pessoas" value="4">4</button></li>
+                                    <li><button type="button" name="num-pessoas" value="5">5</button></li>
+                                    <li><button type="button" name="num-pessoas" value="6">6</button></li>
+                                    <li><button type="button" name="num-pessoas" value="7">7</button></li>
+                                    <li><button type="button" name="num-pessoas" value="8">8</button></li>
+                                    <li><button type="button" name="num-pessoas" value="9">9</button></li>
+                                    <li><button type="button" name="num-pessoas" value="10">10</button></li>
+                                    <li><button type="button" name="num-pessoas" value="11">11</button></li>
+                                    <li><button type="button" name="num-pessoas" value="12">12</button></li>
                                 </ul>
                             </div>
                             <select id="num-pessoas" name="num-pessoas" class="form-select hidden">
@@ -73,11 +74,11 @@
                                 <label class="item-type" for="togglemodel3">Sofá com Chaise</label>
                                 <input type="radio" name="modelo" value="cama" id="togglemodel4" class="button-radio">
                                 <label class="item-type" for="togglemodel4">Sofá-Cama</label>
-                                <input type="radio" name="modelo" value="cantoalemao" id="togglemodel4" class="button-radio">
+                                <input type="radio" name="modelo" value="cantoalemao" id="togglemodel5" class="button-radio">
                                 <label class="item-type" for="togglemodel4">Canto Alemão</label>
-                                <input type="radio" name="modelo" value="namoradeira" id="togglemodel4" class="button-radio">
+                                <input type="radio" name="modelo" value="namoradeira" id="togglemodel6" class="button-radio">
                                 <label class="item-type" for="togglemodel4">Namoradeira</label>
-                                <input type="radio" name="modelo" value="diva" id="togglemodel4" class="button-radio">
+                                <input type="radio" name="modelo" value="diva" id="togglemodel7" class="button-radio">
                                 <label class="item-type" for="togglemodel4">Divã</label>
                             </div>
                         </div>
@@ -97,11 +98,12 @@
                                 <label class="item-type" for="toggleservicos0">Limpeza</label>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                    </div>
-                </div>
+                
         </div>
     </div>

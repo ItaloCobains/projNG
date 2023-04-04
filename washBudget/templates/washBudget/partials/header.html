@@ -1,9 +1,25 @@
 <header class="main-header-container">
     <div class="main-header container">
-        <h1>
-            <a class="main-logo" href="{% url 'link:home' %}">
-                <i class="fas fa-spray-can main-logo-icon"></i>
-                <span class="main-logo-text">NG Clean</span>
-            </a>
+      <h1>
+        <a class="main-logo" href="{% url 'link:home' %}">
+          <i class="fas fa-spray-can main-logo-icon"></i>
+          <span class="main-logo-text">NG Clean</span>
+        </a>
+      </h1>
+      <nav class="navbar">
+        <ul class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+                <li><a class="authors-logout-link" href="#" onclick="document.getElementById('logout-form').submit(); return false;">Sair</a></li>
+                <form id="logout-form" action="{% url 'ng:logout' %}" method='POST'>
+                    {% csrf_token %}
+                    <input type="hidden" name="username" value="{{ request.user.username }}">
+                    <button type="submit" style="display: none;"></button>
+                </form>
+            {% else %}
+                <li><a href="{%url 'ng:login' %}">Login</a></li>
+                <li><a href="{%url 'ng:registro' %}">Registrar</a></li>
+            {% endif %} 
+        </ul>
+      </nav>
     </div>
 </header>

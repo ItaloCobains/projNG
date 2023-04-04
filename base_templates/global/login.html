@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'washBudget/partials/head.html' %}
+    <title>{% block title %}{% endblock title %} NG Clean - Limpeza de Sofás e Estofados</title>
+</head>
+
+<body>
+    <header class="main-header-container">
+        <div class="main-header container">
+            <h1>
+                <a class="main-logo" href="{% url 'link:home' %}">
+                    <i class="fas fa-spray-can main-logo-icon"></i>
+                    <span class="main-logo-text">Login</span>
+                </a>
+            </h1>
+        </div>
+    </header>
+    <main class="main-content-container">
+        {% block content %}{% endblock content %}
+    </main>
+    
+    {% include 'washBudget/partials/footer.html' %}  
+</body>
+
+</html>

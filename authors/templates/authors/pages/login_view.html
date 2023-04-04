@@ -1,0 +1,31 @@
+{% extends 'global/login.html' %}
+
+{% block title %}Login |{% endblock title %}
+{% block content %}
+<br>
+{% include 'washBudget\partials\messages.html' %}
+<div class="form-content form-content-grid">
+    <div class="main-content container">
+        <form class="main-form" action="{{ form_action }}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        <label for="{{field.id_for_label}}">{{field.label}}</label>
+                        {{field}}
+                        {% if field.help_text %}
+                            <p class="help-text">{{field.help_text}}</p>
+                        {% endif %}
+
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+      
+            <div class="form-content form-content-grid">
+                <div class="form-group">
+                    <button type="submit">Enviar</button>
+                </div> 
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
